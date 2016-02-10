@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title ng-controller="MenuCtrl">Sanstatic : {{brand.fields.tagline}}</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script src="http://sanstatic.com/site/js/angular.js"></script>
+    <script src="http://sanstatic.com/site/js/angular-contentful.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>
+    <script src="http://sanstatic.com/site/js/app.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://sanstatic.com/site/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://sanstatic.com/site/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="http://sanstatic.com/site/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://sanstatic.com/site/css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" ng-controller="MenuCtrl">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">{{brand.fields.name}}</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-repeat="item in menu">
+                        <a class="page-scroll" href="{{item.fields.link}}">{{item.fields.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header ng-controller="HeaderCtrl">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>{{header.fields.heading}}</h1>
+                <hr>
+                <p>{{header.fields.subheading}}</p>
+                <a href="https://doug49.typeform.com/to/accPCL" data-mode="1" class="btn btn-primary btn-xl page-scroll">{{header.fields.buttonText}}</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="story" ng-controller="StoryCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">{{story.fields.heading}}</h2>
+                    <hr class="light">
+                    <p class="text-faded">{{story.fields.subheading}}</a></p>
+                    <a href="#" class="btn btn-default btn-xl">{{story.fields.button}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content" ng-controller="ContentCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">{{content.fields.heading}}</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                        <h3>{{content.fields.attributes[0]}}</h3>
+                        <p class="text-muted">{{content.fields.values[0]}}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3>{{content.fields.attributes[1]}}</h3>
+                        <p class="text-muted">{{content.fields.values[1]}}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3>{{content.fields.attributes[2]}}</h3>
+                        <p class="text-muted">{{content.fields.values[2]}}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                        <h3>{{content.fields.attributes[3]}}</h3>
+                        <p class="text-muted">{{content.fields.values[3]}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-bottom:0px;">
+            <div class="row">
+                <div class="col-lg-12 text-center control-group">
+                    <div style="height:50px;" class="col-xs-12"></div>
+                    <h3 class="ng-binding">{{content.fields.description}} <a href="https://app.contentful.com/">{{content.fields.button}}</a>.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="design" class="no-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p><img src="http://sanstatic.com/site/img/portfolio/responsive-design_large.jpg" class="img-responsive" alt=""></p>
+                    <div style="height:50px;" class="col-xs-12"></div>
+                </div>
+            </div>
+        </div>
+    </secion>
+
+    <aside class="bg-dark" ng-controller="StartCtrl">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2 style="margin-bottom:0px">{{start.fields.heading}}</h2>
+                <p class="text-faded ng-binding">{{start.fields.subheading}}</p>
+                <a href="{{start.fields.link}}" class="btn btn-default btn-xl wow tada">{{start.fields.button}}</a>
+            </div>
+        </div>
+    </aside>
+
+    <section id="manage" ng-controller="ContactCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">{{contact.fields.heading}}</h2>
+                    <hr class="primary">
+                    <p>{{contact.fields.description}}</p>
+                </div>
+                <div style="height:50px;" class="col-xs-12"></div>
+                <div class="col-lg-2 col-lg-offset-2 text-center">
+                    <i style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;" class="fa fa-question-circle fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:{{contact.fields.questionaireLink}}">{{contact.fields.questionaire}}</a></p>
+                </div>
+                <div class="col-lg-2 col-lg-offset-1 text-center">
+                    <i style="visibility: visible; animation-name: bounceIn;" class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p><a href="tel:{{contact.fields.phone}}">{{contact.fields.phone}}</a></p>
+                </div>
+                <div class="col-lg-2 col-lg-offset-1 text-center">
+                    <i style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;" class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:{{contact.fields.email}}">{{contact.fields.email}}</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    <section id="manage" ng-controller="DemoCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">JSON data from Contentful</h2>
+                    <hr class="light">
+                    <pre class="ng-cloak" ng-show="objects" ng-repeat="object in objects.items">{{object.fields}}</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- jQuery -->
+    <script src="http://sanstatic.com/site/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://sanstatic.com/site/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://sanstatic.com/site/js/jquery.easing.min.js"></script>
+    <script src="http://sanstatic.com/site/js/jquery.fittext.js"></script>
+    <script src="http://sanstatic.com/site/js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="http://sanstatic.com/site/js/creative.js"></script>
+
+</body>
+
+</html>
