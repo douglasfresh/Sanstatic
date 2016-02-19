@@ -186,7 +186,7 @@
 
     });
 
-    angular
+  angular
     .module('app')
     .controller('ContactCtrl', function ($scope, contentful) {
 
@@ -208,5 +208,11 @@
         )
 
     });
-
+  angular
+    .module('app').filter("getFont", function(){
+       return function(input){
+          // Your logic
+          return input.replace(/+/g," "); 
+       }
+    });
 })();

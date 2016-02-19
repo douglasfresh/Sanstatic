@@ -39,10 +39,10 @@
     <!-- Custom Inline CSS -->
     <style>
         body {
-            font-family:{{brand.fields.primaryFont}};
+            font-family:{{brand.fields.primaryFont | getFont}};
         }
         h1, h2, h3, h4, h5, h6 {
-            font-family:{{brand.fields.secondaryFont}};
+            font-family:{{brand.fields.secondaryFont | getFont}};
         }
         header {
             background-image: url({{brand.fields.picture}});
