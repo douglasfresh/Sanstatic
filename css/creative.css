@@ -229,6 +229,7 @@ header .header-content .header-content-inner p {
         margin-right: auto;
         margin-left: auto;
         max-width: 1000px;
+        text-shadow: 5px 5px 15px #000000;
     }
 
     header .header-content .header-content-inner p {
