@@ -209,7 +209,7 @@
 
     });
   angular
-    .module('app').filter("getFont", function(){
+    .filter("getFont", function(){
        return function(input){
           // Your logic
           return input.replace(/+/g," "); 
