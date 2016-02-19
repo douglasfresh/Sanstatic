@@ -49,7 +49,7 @@
     .filter("getFont", function(){
        return function(input){
           // Your logic
-          return input.replace(/+/g," "); 
+          return input.replace(/\s+/g," "); 
        }
     });
 
