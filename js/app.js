@@ -41,6 +41,9 @@ function ContentfulCtrl($scope, $q) {
         case "contact":
           $scope.contact = entry.fields;
           break;
+        case "content":
+          $scope.content = entry.fields;
+          break;
         case "design":
           $scope.design = entry.fields;
           break;
