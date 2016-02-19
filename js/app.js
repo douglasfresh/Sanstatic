@@ -209,6 +209,7 @@
 
     });
   angular
+    .module('app')
     .filter("getFont", function(){
        return function(input){
           // Your logic
