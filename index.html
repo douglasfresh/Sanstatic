@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="app" ng-controller="MenuCtrl">
 
 <head>
 
@@ -32,24 +32,22 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <div ng-controller="MenuCtrl">
-        <title>Sanstatic : {{brand.fields.tagline}}</title>
-        <link href='http://fonts.googleapis.com/css?family={{brand.fields.primaryFont}}:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family={brand.fields.secondaryFont}}:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <title>Sanstatic : {{brand.fields.tagline}}</title>
+    <link href='http://fonts.googleapis.com/css?family={{brand.fields.primaryFont}}:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family={brand.fields.secondaryFont}}:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     
-        <!-- Custom Inline CSS -->
-        <style>
-            body {
-                font-family:{{brand.fields.primaryFont}};
-            }
-            h1, h2, h3, h4, h5, h6 {
-                font-family:{{brand.fields.secondaryFont}};
-            }
-            header {
-                background-image: url('{{brand.fields.picture}}');
-            }
-        </style>
-    </div>
+    <!-- Custom Inline CSS -->
+    <style>
+        body {
+            font-family:{{brand.fields.primaryFont}};
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family:{{brand.fields.secondaryFont}};
+        }
+        header {
+            background-image: url({{brand.fields.picture}});
+        }
+    </style>
 
 </head>
 
