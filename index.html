@@ -9,7 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title ng-controller="MenuCtrl">Sanstatic : {{brand.fields.tagline}}</title>
+    <div ng-controller="MenuCtrl">
+        <title>Sanstatic : {{brand.fields.tagline}}</title>
+        <link href='http://fonts.googleapis.com/css?family={{brand.fields.primaryFont}}:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family={brand.fields.secondaryFont}}:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    </div>
 
     <script src="http://sanstatic.com/site/js/angular.js"></script>
     <script src="http://sanstatic.com/site/js/angular-contentful.js"></script>
@@ -19,10 +23,7 @@
     <link rel="stylesheet" href="http://sanstatic.com/site/css/bootstrap.min.css" type="text/css">
 
     <!-- Custom Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="http://sanstatic.com/site/css/animate.min.css" type="text/css">
