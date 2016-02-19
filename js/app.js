@@ -14,6 +14,15 @@
 
   angular
     .module('app')
+    .filter("getFont", function(){
+       return function(input){
+          // Your logic
+          return input.replace(/+/g," "); 
+       }
+    });
+
+  angular
+    .module('app')
     .controller('MenuCtrl', function ($scope, contentful) {
 
       var promise;
@@ -207,13 +216,5 @@
           }
         )
 
-    });
-  angular
-    .module('app')
-    .filter("getFont", function(){
-       return function(input){
-          // Your logic
-          return input.replace(/+/g," "); 
-       }
     });
 })();
