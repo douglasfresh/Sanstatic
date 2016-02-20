@@ -1,3 +1,4 @@
+// Contentul API Client
 var client = contentful.createClient({
   // ID of Space
   space: 'bhbl6r0rag31',
@@ -16,10 +17,34 @@ var client = contentful.createClient({
 
 });
 
-function ContentfulCtrl($scope, $q) {
+// AngularJS Application
+var app = angular.module( "app", ['ngRoute'] );
+
+app.config(function($routeProvider) {
+  $routeProvider
+    .when("/",
+    {
+      templateUrl: "templates/creative.html",
+    })
+    .when('/:template', 
+    {
+      templateUrl: function(params) {
+        return 'templates/' + params.template + '.html';
+      },
+      controller: 'ContentfulCtrl'
+    })
+});
+
+app.controller('ContentfulCtrl', ['$scope', '$q', function($scope, $q) {
   $scope.slides = Array();
   $scope.sections = Array();
   $scope.menu = Array();
+
+  $scope.setColor = function(color) {
+    less.modifyVars({
+      '@theme-primary': color
+    });
+  }
 
   var entries = $q.when(client.entries());
   
@@ -42,9 +67,7 @@ function ContentfulCtrl($scope, $q) {
 
         case "brand":
           $scope.brand = entry.fields;
-          less.modifyVars({
-            '@theme-primary': $scope.brand.colorScheme
-          });
+          $scope.setColor($scope.brand.colorScheme);
           break;
 
         case "contact":
@@ -76,13 +99,17 @@ function ContentfulCtrl($scope, $q) {
       } 
     });
   });
-}
+}]);
 
-angular.module('app', []).
-  controller('ContentfulCtrl', ContentfulCtrl)
-  .filter("getFont", function(){
-    //convert + to space
-    return function(input){
-      if(input) return input.replace(/\s+/g," "); 
-    }
-  });
+app.filter("getFont", function() {
+  //convert + to space
+  return function(input){
+    if(input) return input.replace(/\s+/g," "); 
+  }
+});
+
+app.run(['$rootScope', function($rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+      $rootScope.template = current.params.template;
+    });
+}]);
