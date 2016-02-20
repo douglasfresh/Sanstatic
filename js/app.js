@@ -17,42 +17,60 @@ var client = contentful.createClient({
 });
 
 function ContentfulCtrl($scope, $q) {
-  var entries = $q.when(client.entries());
-
+  $scope.slides = Array();
   $scope.sections = Array();
   $scope.menu = Array();
 
+  var entries = $q.when(client.entries());
+  
   entries.then(function(entries) {
+
     entries.forEach(function(entry) {
+
       switch(entry.sys.contentType.sys.id) {
         case "header":
           $scope.header = entry.fields;
           break;
+
         case "story":
           $scope.story = entry.fields;
           break;
+
         case "start":
           $scope.start = entry.fields;
           break;
+
         case "brand":
           $scope.brand = entry.fields;
-          less.modifyVars({'@theme-primary': $scope.brand.colorScheme})
+          less.modifyVars({
+            '@theme-primary': $scope.brand.colorScheme
+          });
           break;
+
         case "contact":
           $scope.contact = entry.fields;
           break;
+
         case "content":
           $scope.content = entry.fields;
           break;
+
         case "design":
           $scope.design = entry.fields;
           break;
+
+        case "slide":
+          $scope.slides.push(entry.fields);
+          break;
+
         case "section":
           $scope.sections.push(entry.fields);
           break;
+
         case "menuItem":
           $scope.menu.push(entry.fields);
           break;
+
         default:
           break;
       } 
@@ -63,6 +81,7 @@ function ContentfulCtrl($scope, $q) {
 angular.module('app', []).
   controller('ContentfulCtrl', ContentfulCtrl)
   .filter("getFont", function(){
+    //convert + to space
     return function(input){
       if(input) return input.replace(/\s+/g," "); 
     }
