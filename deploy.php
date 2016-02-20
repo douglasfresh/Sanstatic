@@ -1,5 +1,8 @@
 <?php
 
+$file = "less/creative.less";
+echo $file;
+
 // Take in design specs
 // Create variables.less
 // Compile less
@@ -8,7 +11,6 @@
 
 if(isset[$_GET["font1"]]) 
 	$font1 = $_GET["font1"];
-	echo $font1;
 if(isset[$_GET["font2"]]) 
 	$font2 = $_GET["font2"];
 if(isset[$_GET["color1"]]) 
@@ -19,8 +21,7 @@ if(isset[$_GET["bg"]])
 	$bg = $_GET["bg"];
 
 require "less/lessphp/lessc.inc.php";
-echo "less/creative.less";
-$file = "less/creative.less";
+
 function autoCompileLess($inputFile, $outputFile) {
     // load the cache
     $cacheFile = $inputFile.".cache";
