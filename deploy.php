@@ -4,7 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$file = "less/creative.less";
+$variables = "less/variables.less";
+$input = "less/creative.less";
+$output = "css/less.css";
 
 // Take in design specs
 // Create variables.less
@@ -23,9 +25,14 @@ if(isset($_GET["color2"]))
 if(isset($_GET["bg"])) 
 	$bg = $_GET["bg"];
 
-require "less/lessphp/lessc.inc.php";
+$content = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
 
+echo $content;
+
+file_put_contents($variables, $content);
+
+require "less/lessphp/lessc.inc.php";
 $less = new lessc;
-echo $less->compileFile($file);
+echo $less->compileFile($input, $output);
 
 ?>
