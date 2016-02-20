@@ -20,6 +20,6 @@ if(isset[$_GET["bg"]])
 require "lessc.php";
 
 $less = new lessc;
-echo $less->compile('less/creative.less');
+echo $less->compileFile('less/creative.less');
 
 ?>
