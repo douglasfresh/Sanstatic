@@ -17,9 +17,25 @@ if(isset[$_GET["color2"]])
 if(isset[$_GET["bg"]]) 
 	$bg = $_GET["bg"];
 
-require "lessc.php";
-
-$less = new lessc;
-echo $less->compileFile('less/creative.less');
-
+require "lessc.inc.php";
+$file = "less/creative.less";
+function autoCompileLess($inputFile, $outputFile) {
+    // load the cache
+    $cacheFile = $inputFile.".cache";
+    if (file_exists($cacheFile)) {
+        $cache = unserialize(file_get_contents($cacheFile));
+    } else {
+        $cache = $inputFile;
+    }
+    $less = new lessc;
+    $less->setFormatter("compressed");
+    $newCache = $less->cachedCompile($cache);
+    if (!is_array($cache) || $newCache["updated"] > $cache["updated"]) {
+        file_put_contents($cacheFile, serialize($newCache));
+        file_put_contents($outputFile, $newCache['compiled']);
+    }
+}
+autoCompileLess('../' . $file, '../' . $file . '.css');
+header('Content-type: text/css');
+readfile('../' . $file . '.css');
 ?>
