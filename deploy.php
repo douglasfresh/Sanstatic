@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 $variables = "less/variables.less";
 $input = "less/creative.less";
-$output = "css/less.css";
+$output = "css/creative.css";
 
 // Take in design specs
 // Create variables.less
