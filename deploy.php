@@ -8,6 +8,7 @@
 
 if(isset[$_GET["font1"]]) 
 	$font1 = $_GET["font1"];
+	echo $font1;
 if(isset[$_GET["font2"]]) 
 	$font2 = $_GET["font2"];
 if(isset[$_GET["color1"]]) 
