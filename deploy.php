@@ -17,7 +17,7 @@ if(isset[$_GET["color2"]])
 if(isset[$_GET["bg"]]) 
 	$bg = $_GET["bg"];
 
-require "lessc.inc.php";
+require "less/lessphp/lessc.inc.php";
 $file = "less/creative.less";
 function autoCompileLess($inputFile, $outputFile) {
     // load the cache
