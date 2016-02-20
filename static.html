@@ -1,0 +1,668 @@
+<!DOCTYPE html><html lang="en" ng-app="app" ng-controller="ContentfulCtrl" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <title class="ng-binding">Sanstatic : Enterprise Website Startup, Management &amp; Promotion</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/animate.min.css" type="text/css">
+    <link rel="stylesheet/less" href="less/variables.less" type="text/css"><style type="text/css" id="less:site-less-variables"></style>
+    <link rel="stylesheet/less" href="less/mixins.less" type="text/css"><style type="text/css" id="less:site-less-mixins"></style>
+    <link rel="stylesheet/less" href="less/creative.less" type="text/css"><style type="text/css" id="less:site-less-creative">html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+}
+hr {
+  border-color: #00ff00;
+  border-width: 3px;
+  max-width: 50px;
+}
+hr.light {
+  border-color: white;
+}
+a {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+  color: #00ff00;
+}
+a:hover,
+a:focus {
+  color: #00cc00;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.bg-primary {
+  background-color: #00ff00;
+}
+.bg-dark {
+  background-color: #222;
+  color: white;
+}
+.text-faded {
+  color: rgba(255, 255, 255, 0.7);
+}
+section {
+  padding: 100px 0;
+}
+aside {
+  padding: 50px 0;
+}
+.no-padding {
+  padding: 0;
+}
+.navbar-default {
+  background-color: white;
+  border-color: rgba(34, 34, 34, 0.05);
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.navbar-default .navbar-header .navbar-brand {
+  color: #00ff00;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+  color: #00cc00;
+}
+.navbar-default .nav > li > a,
+.navbar-default .nav > li > a:focus {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  color: #222;
+}
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus:hover {
+  color: #00ff00;
+}
+.navbar-default .nav > li.active > a,
+.navbar-default .nav > li.active > a:focus {
+  color: #00ff00 !important;
+  background-color: transparent;
+}
+.navbar-default .nav > li.active > a:hover,
+.navbar-default .nav > li.active > a:focus:hover {
+  background-color: transparent;
+}
+@media (min-width: 768px) {
+  .navbar-default {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  .navbar-default .navbar-header .navbar-brand {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .navbar-default .navbar-header .navbar-brand:hover,
+  .navbar-default .navbar-header .navbar-brand:focus {
+    color: white;
+  }
+  .navbar-default .nav > li > a,
+  .navbar-default .nav > li > a:focus {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .navbar-default .nav > li > a:hover,
+  .navbar-default .nav > li > a:focus:hover {
+    color: white;
+  }
+  .navbar-default.affix {
+    background-color: white;
+    border-color: rgba(34, 34, 34, 0.05);
+  }
+  .navbar-default.affix .navbar-header .navbar-brand {
+    color: #00ff00;
+    font-size: 14px;
+  }
+  .navbar-default.affix .navbar-header .navbar-brand:hover,
+  .navbar-default.affix .navbar-header .navbar-brand:focus {
+    color: #00cc00;
+  }
+  .navbar-default.affix .nav > li > a,
+  .navbar-default.affix .nav > li > a:focus {
+    color: #222;
+  }
+  .navbar-default.affix .nav > li > a:hover,
+  .navbar-default.affix .nav > li > a:focus:hover {
+    color: #00ff00;
+  }
+}
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url('http://sanstatic.com/site/img/header.jpg');
+  text-align: center;
+  color: white;
+}
+header .header-content {
+  position: relative;
+  text-align: center;
+  padding: 100px 15px 100px;
+  width: 100%;
+}
+header .header-content .header-content-inner h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+header .header-content .header-content-inner hr {
+  margin: 30px auto;
+}
+header .header-content .header-content-inner p {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  header {
+    min-height: 100%;
+  }
+  header .header-content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0 50px;
+  }
+  header .header-content .header-content-inner {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header .header-content .header-content-inner p {
+    font-size: 18px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.section-heading {
+  margin-top: 0;
+}
+.service-box {
+  max-width: 400px;
+  margin: 50px auto 0;
+}
+@media (min-width: 992px) {
+  .service-box {
+    margin: 20px auto 0;
+  }
+}
+.service-box p {
+  margin-bottom: 0;
+}
+.portfolio-box {
+  position: relative;
+  display: block;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.portfolio-box .portfolio-box-caption {
+  color: white;
+  opacity: 0;
+  display: block;
+  background: rgba(0, 255, 0, 0.9);
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  padding: 0 15px;
+}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  font-size: 18px;
+}
+.portfolio-box:hover .portfolio-box-caption {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+    font-size: 16px;
+  }
+  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+    font-size: 22px;
+  }
+}
+.call-to-action h2 {
+  margin: 0 auto 20px;
+}
+.text-primary {
+  color: #00ff00;
+}
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.btn-default {
+  color: #222;
+  background-color: white;
+  border-color: white;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #222;
+  background-color: #f2f2f2;
+  border-color: #ededed;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color: white;
+  border-color: white;
+}
+.btn-default .badge {
+  color: white;
+  background-color: #222;
+}
+.btn-primary {
+  color: white;
+  background-color: #00ff00;
+  border-color: #00ff00;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: white;
+  background-color: #00e600;
+  border-color: #00db00;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #00ff00;
+  border-color: #00ff00;
+}
+.btn-primary .badge {
+  color: #00ff00;
+  background-color: white;
+}
+.btn {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  border: none;
+  border-radius: 300px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.btn-xl {
+  padding: 15px 30px;
+}
+::-moz-selection {
+  color: white;
+  text-shadow: none;
+  background: #222;
+}
+::selection {
+  color: white;
+  text-shadow: none;
+  background: #222;
+}
+img::selection {
+  color: white;
+  background: transparent;
+}
+img::-moz-selection {
+  color: white;
+  background: transparent;
+}
+body {
+  webkit-tap-highlight-color: #222;
+}
+</style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Angular -->
+    <script src="https://storage.googleapis.com/cdnsanstatic/js/less.min.js"></script>
+    <script src="https://storage.googleapis.com/cdnsanstatic/js/angular.min.js"></script>
+    <script src="https://storage.googleapis.com/cdnsanstatic/js/contentful.min.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- Inline CSS -->
+    <style class="ng-binding">
+        body {
+            font-family:Sorts+Mill+Goudy;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family:Caveat;
+        }
+        header {
+            background-image: url(https://images.contentful.com/bhbl6r0rag31/4h80UdTyaIOcMKYemiEA6y/4e851c63159f3e7f751e45c11597514e/bg.jpg);
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top affix-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll ng-binding" href="#page-top">Sanstatic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- ngRepeat: item in menu --><li ng-repeat="item in menu" class="ng-scope">
+                        <a class="page-scroll ng-binding" href="#manage">Manage</a>
+                    </li><!-- end ngRepeat: item in menu --><li ng-repeat="item in menu" class="ng-scope">
+                        <a class="page-scroll ng-binding" href="#story">Story</a>
+                    </li><!-- end ngRepeat: item in menu --><li ng-repeat="item in menu" class="ng-scope">
+                        <a class="page-scroll ng-binding" href="#content">Content</a>
+                    </li><!-- end ngRepeat: item in menu --><li ng-repeat="item in menu" class="ng-scope">
+                        <a class="page-scroll ng-binding" href="#design">Design</a>
+                    </li><!-- end ngRepeat: item in menu -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 style="font-size: 65px;" class="ng-binding">Harness the marketing power of search engines</h1>
+                <hr>
+                <p class="ng-binding">Want us to craft your website and promote it with Google? <span ng-show="header.description" class="ng-binding ng-hide"><br></span></p><p></p>
+                <a href="https://doug49.typeform.com/to/accPCL" data-mode="1" class="btn btn-primary btn-xl page-scroll ng-binding">Get started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="story">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading ng-binding">What's your story?</h2>
+                    <hr class="light">
+                    <p class="text-faded ng-binding">Every great website starts with a story. Whether you are looking to start a newsletter, build a product catalog, or aggregate your social media, let your website tell the story.</p>
+                    <a href="#" class="btn btn-default btn-xl ng-binding">Browse Stories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading ng-binding">Take control of your market with superior content.</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x  wow bounceIn text-primary fa-lightbulb-o" style="visibility: hidden; -webkit-animation: none;"></i>
+                        <h3 class="ng-binding">Be Original</h3>
+                        <p class="text-muted ng-binding">Every story is different. We start by understanding your specific needs and researching your competition to create unique content for your business.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x  wow bounceIn text-primary fa-usb" data-wow-delay=".1s" style="visibility: hidden; -webkit-animation: none 0.1s;"></i>
+                        <h3 class="ng-binding">Integrate Freely</h3>
+                        <p class="text-muted ng-binding">Then we integrate our applications to display content appropriate for you. We consistently recommend social media integration to promote upcoming events.</p>
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x  wow bounceIn text-primary fa-bar-chart" data-wow-delay=".1s" style="visibility: hidden; -webkit-animation: none 0.1s;"></i>
+                        <h3 class="ng-binding">Report Analytics</h3>
+                        <p class="text-muted ng-binding">We monitor all of the data related to the usage of your website and then implement a content strategy for an optimal user experience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x  wow bounceIn text-primary fa-rss" data-wow-delay=".1s" style="visibility: hidden; -webkit-animation: none 0.1s;"></i>
+                        <h3 class="ng-binding">Research Keywords</h3>
+                        <p class="text-muted ng-binding">Most importantly we indentify the searches of your potential customers and target the keywords they use to promote your website with search engines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="design" class="no-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center control-group">
+                    <a name="design"></a><h3 class="ng-binding"><a name="design" class="ng-binding"></a><a href="https://app.contentful.com/" class="ng-binding">Build your credibility with professional website design.</a></h3>
+                    <div style="height:25px;" class="col-xs-12"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x  wow bounceIn text-primary fa-mobile" data-wow-delay=".2s" style="visibility: hidden; -webkit-animation: none 0.2s;"></i>
+                        <h3 class="ng-binding">Responsive</h3>
+                        <p class="text-muted ng-binding">All of our websites scale to fit any device. As of recent mobile devices encompass more of the traffic on the Internet than desktops.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x  wow bounceIn text-primary fa-desktop" data-wow-delay=".3s" style="visibility: hidden; -webkit-animation: none 0.3s;"></i>
+                        <h3 class="ng-binding">Modern</h3>
+                        <p class="text-muted ng-binding">We design our websites using proven frameworks that allow for consistency with the utmost usability and modern aesthetics.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x  wow bounceIn text-primary fa-wrench" data-wow-delay=".1s" style="visibility: hidden; -webkit-animation: none 0.1s;"></i>
+                        <h3 class="ng-binding">Custom</h3>
+                        <p class="text-muted ng-binding">We want your website to be personalized to provide complete transparency into your offline business.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x  wow bounceIn text-primary fa-heartbeat" data-wow-delay=".1s" style="visibility: hidden; -webkit-animation: none 0.1s;"></i>
+                        <h3 class="ng-binding">Secure</h3>
+                        <p class="text-muted ng-binding">Rest assured your website will always be live and healthy with our enterprise cloud hosting and 24/7 monitoring.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div style="height:50px;" class="col-xs-12"></div>
+                    <p><img class="img-responsive" alt=""></p>
+                    <div style="height:50px;" class="col-xs-12"></div>
+                </div>
+            </div>
+        </div>
+    
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2 style="margin-bottom:0px" class="ng-binding">Get started at $139/mo for the first 12 months.</h2>
+                <p class="text-faded ng-binding">After the first year, ongoing Management starts at only $29/mo.</p>
+                <a href="https://doug49.typeform.com/to/accPCL" class="btn btn-default btn-xl wow tada ng-binding" style="visibility: hidden; -webkit-animation: none;">Build me a website</a>
+            </div>
+        </div>
+    </aside>
+
+    <section id="manage">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading ng-binding">We'd love to hear from you!</h2>
+                    <hr class="primary">
+                    <p class="ng-binding">Are you ready to see what Sanstatic can do for you? Please complete our branding questionaire, give us a call, or send us an email to get started.</p>
+                </div>
+                <div style="height:50px;" class="col-xs-12"></div>
+                <div class="col-lg-2 col-lg-offset-2 text-center">
+                    <i style="visibility: hidden; -webkit-animation: none 0.1s;" class="fa fa-question-circle fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="https://doug49.typeform.com/to/accPCL" class="ng-binding">Questionaire</a></p>
+                </div>
+                <div class="col-lg-2 col-lg-offset-1 text-center">
+                    <i style="visibility: hidden; -webkit-animation: none;" class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p><a href="tel:(407) 590-5644" class="ng-binding">(407) 590-5644</a></p>
+                </div>
+                <div class="col-lg-2 col-lg-offset-1 text-center">
+                    <i style="visibility: hidden; -webkit-animation: none 0.1s;" class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:sales@sanstatic.com" class="ng-binding">sales@sanstatic.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    <section id="manage" ng-controller="DemoCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">JSON data from Contentful</h2>
+                    <hr class="light">
+                    <pre class="ng-cloak" ng-show="objects" ng-repeat="object in objects.items">{{object}}</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- jQuery -->
+    <script src="https://storage.googleapis.com/cdnsanstatic/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://storage.googleapis.com/cdnsanstatic/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+
+
+
+</section></body></html>
