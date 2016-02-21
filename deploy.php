@@ -71,8 +71,6 @@ echo  htmlspecialchars($response);
   <form novalidate>
     Primary Color:<br>
     <input type="text" ng-model="design.color1"><br>
-    Secondary Color:<br>
-    <input type="text" ng-model="design.color2"><br>
     Heading Font:<br>
     <input type="text" ng-model="design.font1"><br>
     Paragraph Font:<br>
@@ -88,7 +86,7 @@ echo  htmlspecialchars($response);
 
 <script>
 var app = angular.module('myApp', []);
-app.controller('formCtrl', function($scope) {
+app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http) {
 
    $scope.reset = function() {
        $scope.design = angular.copy($scope.contentful);
@@ -117,8 +115,12 @@ app.controller('formCtrl', function($scope) {
 
    entries.then(function(entries) {
       $scope.contentful = entries[0].fields;
+      $scope.design.color1 = entries[0].fields.colorScheme;
+      $scope.design.font1 = entries[0].fields.primaryFont;
+      $scope.design.font2 = entries[0].fields.secondaryFont;
+      $scope.design.bg = entries[0].fields.picture;
    });
-});
+}]);
 
 </script>
 
