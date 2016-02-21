@@ -99,16 +99,16 @@ $less->compileFile($input, $output);
 	    </div>
 	    <form novalidate>
 		    <label>Primary Color:</label>
-		    <input type="text" ng-model="design.color1" name="color1">
+		    <input type="text" ng-model="design.color1" name="color1"><br/>
 		    <label>Secondary Color:</label>
-		    <input type="text" ng-model="design.color2" name="color2">
+		    <input type="text" ng-model="design.color2" name="color2"><br/>
 		    <label>Heading Font:</label>
-		    <input type="text" ng-model="design.font1" name="font1">
+		    <input type="text" ng-model="design.font1" name="font1"><br/>
 	    	<label>Paragraph Font:</label>
-	    	<input type="text" ng-model="design.font2" name="font2">
+	    	<input type="text" ng-model="design.font2" name="font2"><br/>
 		    <label>Background:</label>
-		    <input type="text" ng-model="design.bg" name="bg">
-		    <button ng-click="reset()">RESET</button>
+		    <input type="text" ng-model="design.bg" name="bg"><br/>
+		    <button ng-click="reset()">RESET</button>&nsbp;or&nsbp;
 		    <button type="submit">DEPLOY</button>
 	   	</form>
 	</div>
