@@ -76,25 +76,92 @@ $less->compileFile($input, $output);
 <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/animate.min.css" type="text/css">
 <link rel="stylesheet" href="http://sanstatic.com/site/css/creative.css" type="text/css">
 
+
+<section id="content" class="ng-scope">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading ng-binding">Take control of your market with superior content.</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x  wow bounceIn text-primary fa-lightbulb-o" style="visibility: visible; animation-name: bounceIn;"></i>
+                    <h3>Brand</h3>
+                    <p class="text-muted">{{brand}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="service-box">
+                    <i data-wow-delay=".1s" class="fa fa-4x  wow bounceIn text-primary fa-usb" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
+                    <h3>Forms</h3>
+                    <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="service-box">
+                    <i data-wow-delay=".1s" class="fa fa-4x  wow bounceIn text-primary fa-usb" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
+                    <h3>Parameters</h3>
+                    <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
+                </div>
+            </div>
+        </div>    
+    </div>
+</section>
+
+
+
 <div ng-app="myApp" ng-controller="formCtrl" action="deploy.php">
-  <form novalidate>
-    Primary Color:<br>
-    <input type="text" ng-model="design.color1" name="color1"><br>
-    Secondary Color:<br>
-    <input type="text" ng-model="design.color2" name="color2"><br>
-    Heading Font:<br>
-    <input type="text" ng-model="design.font1" name="font1"><br>
-    Paragraph Font:<br>
-    <input type="text" ng-model="design.font2" name="font2"><br>
-    Background:<br>
-    <input type="text" ng-model="design.bg" name="bg"><br>
-    <br><br>
-    <button ng-click="reset()">RESET</button>
-    <button type="submit">DEPLOY</button>
-  </form>
-  <p>Contentful Brand = {{brand}}</p>
-  <p>Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
-  <p>URL Parameters = <?php echo $content; ?></p>
+	<section id="content" class="ng-scope">
+		<div class="container">
+		    <div class="row">
+		        <form novalidate>
+				    Primary Color:<br>
+				    <input type="text" ng-model="design.color1" name="color1"><br>
+				    Secondary Color:<br>
+				    <input type="text" ng-model="design.color2" name="color2"><br>
+				    Heading Font:<br>
+				    <input type="text" ng-model="design.font1" name="font1"><br>
+				    Paragraph Font:<br>
+				    <input type="text" ng-model="design.font2" name="font2"><br>
+				    Background:<br>
+				    <input type="text" ng-model="design.bg" name="bg"><br>
+				    <br><br>
+				    <button ng-click="reset()">RESET</button>
+				    <button type="submit">DEPLOY</button>
+				</form>
+		    </div>
+		</div>
+		<div class="container">
+		    <div class="row">
+		        <div class="col-lg-4 text-center">
+		            <div class="service-box">
+		                <i class="fa fa-4x  wow bounceIn text-primary fa-lightbulb-o" style="visibility: visible; animation-name: bounceIn;"></i>
+		                <h3>Brand</h3>
+		                <p class="text-muted">{{brand}}</p>
+		            </div>
+		        </div>
+		        <div class="col-lg-4 text-center">
+		            <div class="service-box">
+		                <i data-wow-delay=".1s" class="fa fa-4x  wow bounceIn text-primary fa-usb" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
+		                <h3>Forms</h3>
+		                <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
+		            </div>
+		        </div>
+		        <div class="col-lg-4 text-center">
+		            <div class="service-box">
+		                <i data-wow-delay=".1s" class="fa fa-4x  wow bounceIn text-primary fa-usb" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
+		                <h3>Parameters</h3>
+		                <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
+		            </div>
+		        </div>
+		    </div>    
+		</div>
+	</section>
 </div>
 
 <script>
