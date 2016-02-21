@@ -43,6 +43,6 @@ $less->compileFile($input, $output);
 
 $phantom_script= dirname(__FILE__). '/js/get-website.js'; 
 $response =  exec ('phantomjs ' . $phantom_script);
-echo  $response;
+echo  htmlspecialchars($response);
 
 ?>
