@@ -82,43 +82,40 @@ $less->compileFile($input, $output);
 	    <div class="row">
 	        <div class="col-lg-12">
                 <h3>Brand</h3>
-                <hr class="primary">
                 <p class="text-muted">{{brand}}</p>
 	        </div>
 	    </div>
 	    <div class="row">
 	        <div class="col-lg-12">
                 <h3>Forms</h3>
-                <hr class="primary">
                 <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
 	        </div>
 	    </div>
 	    <div class="row">
 	        <div class="col-lg-12">
                 <h3>Parameters</h3>
-                <hr class="primary">
                 <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
 	        </div>
 	    </div>    
 	    <div class="row">
 	    	<form novalidate>
 	    		<div class="col-lg-2 text-center">
-				    <h3>Primary Color:</h3>
+				    <label>Primary Color:</label>
 				    <input type="text" ng-model="design.color1" name="color1">
 				</div>
 				<div class="col-lg-2 text-center">
-				    <h3>Secondary Color:</h3>
+				    <label>Secondary Color:</label>
 				    <input type="text" ng-model="design.color2" name="color2">
 				</div>
 				<div class="col-lg-2 text-center">
-				    <h3>Heading Font:</h3>
+				    <label>Heading Font:</label>
 				    <input type="text" ng-model="design.font1" name="font1">
 				</div>
-			    	<h3>Paragraph Font:</h3>
+			    	<label>Paragraph Font:</label>
 			    	<input type="text" ng-model="design.font2" name="font2">
 			    </div>
 			    <div class="col-lg-2 text-center">
-				    Background:<br>
+				    <label>Background:</label>
 				    <input type="text" ng-model="design.bg" name="bg">
 				</div>
 				<div class="col-lg-2 text-center">
