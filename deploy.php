@@ -88,25 +88,7 @@ $less->compileFile($input, $output);
 <!-- deployApp -->
 <div ng-app="deployApp" ng-controller="formCtrl" action="deploy.php">
 	<div class="container" style="width:90%">
-	    <div class="row">
-	        <div class="col-lg-12">
-                <h3>Brand</h3>
-                <p class="text-muted">{{brand}}</p>
-	        </div>
-	    </div>
-	    <div class="row">
-	        <div class="col-lg-12">
-                <h3>Forms</h3>
-                <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
-	        </div>
-	    </div>
-	    <div class="row">
-	        <div class="col-lg-12">
-                <h3>Parameters</h3>
-                <p class="text-muted"><?php echo $content; ?></p>
-	        </div>
-	    </div>
-	    <div class="row">
+		<div class="row">
 	    	<div class="col-lg-12">
 		    	<h3>Settings</h3>
 			    <form novalidate>
@@ -138,7 +120,25 @@ $less->compileFile($input, $output);
 			   	</form>
 		   </div>
 		</div>
-		 <div class="row">
+	    <div class="row">
+	        <div class="col-lg-12">
+                <h3>Brand</h3>
+                <p class="text-muted">{{brand}}</p>
+	        </div>
+	    </div>
+	    <div class="row">
+	        <div class="col-lg-12">
+                <h3>Forms</h3>
+                <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
+	        </div>
+	    </div>
+	    <div class="row">
+	        <div class="col-lg-12">
+                <h3>Parameters</h3>
+                <p class="text-muted"><?php echo $content; ?></p>
+	        </div>
+	    </div>
+		<div class="row">
 	    	<div class="col-lg-12">
 		    	<h3>Resources</h3>
 		    	<ul>
