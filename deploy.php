@@ -97,33 +97,36 @@ $less->compileFile($input, $output);
                 <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
 	        </div>
 	    </div>    
-	    <div class="row">
-	    	<form novalidate>
-	    		<div class="col-lg-2 text-center">
+	    <form novalidate>
+	    	<div class="row">
+	    		<div class="col-lg-4 text-center">
 				    <label>Primary Color:</label>
 				    <input type="text" ng-model="design.color1" name="color1">
 				</div>
-				<div class="col-lg-2 text-center">
+				<div class="col-lg-4 text-center">
 				    <label>Secondary Color:</label>
 				    <input type="text" ng-model="design.color2" name="color2">
 				</div>
-				<div class="col-lg-2 text-center">
+				<div class="col-lg-4 text-center">
 				    <label>Heading Font:</label>
 				    <input type="text" ng-model="design.font1" name="font1">
 				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 text-center">
 			    	<label>Paragraph Font:</label>
 			    	<input type="text" ng-model="design.font2" name="font2">
 			    </div>
-			    <div class="col-lg-2 text-center">
+			    <div class="col-lg-4 text-center">
 				    <label>Background:</label>
 				    <input type="text" ng-model="design.bg" name="bg">
 				</div>
-				<div class="col-lg-2 text-center">
+				<div class="col-lg-4 text-center">
 				    <button ng-click="reset()">RESET</button>
 				    <button type="submit">DEPLOY</button>
 				</div>
-			</form>
-	    </div>
+	   		</div>
+	   	</form>
 	</div>
 </div>
 
