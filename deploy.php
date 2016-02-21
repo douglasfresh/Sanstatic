@@ -88,10 +88,6 @@ echo  htmlspecialchars($response);
 var app = angular.module('myApp', []);
 app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http) {
 
-   $scope.reset = function() {
-       $scope.design = angular.copy($scope.contentful);
-   };
-
    // Contentul API Client
    var client = contentful.createClient({
       // ID of Space
@@ -111,12 +107,20 @@ app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http)
 
    });
 
-   var entries = $q.when(client.entries({content_type: 'brand'}));
+   $scope.reset = function() {
+   	   var entries = $q.when(client.entries({content_type: 'brand'}));
 
-   entries.then(function(entries) {
-      $scope.contentful = entries[0].fields;
-   });
+	   entries.then(function(entries) {
+	      $scope.contentful = entries[0].fields;
+	      $scope.design.color1 = entries[0].fields.colorScheme;
+	      $scope.design.font1 = entries[0].fields.primaryFont;
+	      $scope.design.font2 = entries[0].fields.secondaryFont;
+	      $scope.design.bg = entries[0].fields.picture;
+	   });
+   };
+
 }]);
+
 </script>
 
 <!-- jQuery -->
