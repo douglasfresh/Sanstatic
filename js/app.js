@@ -24,12 +24,12 @@ app.config(function($routeProvider) {
   $routeProvider
     .when("/",
     {
-      templateUrl: "http://sanstatic.com/site/templates/creative.html",
+      templateUrl: "templates/creative.html",
     })
     .when('/:template', 
     {
       templateUrl: function(params) {
-        return 'http://sanstatic.com/site/templates/' + params.template + '.html';
+        return 'templates/' + params.template + '.html';
       },
       controller: 'ContentfulCtrl'
     })
@@ -109,6 +109,6 @@ app.filter("getFont", function() {
 
 app.run(['$rootScope', function($rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-      $rootScope.template = current.params.template;
+      //$rootScope.template = current.params.template;
     });
 }]);
