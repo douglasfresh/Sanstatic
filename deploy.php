@@ -133,5 +133,7 @@ app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http)
 	   });
    };
 
+   $scope.reset();
+
 }]);
 </script>
