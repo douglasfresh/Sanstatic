@@ -1,72 +1,63 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-$variables = "less/variables.less";
-$input = "less/creative.less";
-$output = "css/creative.css";
-
 // Take in design specs
 // Create variables.less
 // Compile less
 // Create static index.html with Phantom
 // Push to GitHub
 
-if(isset($_GET["font1"])) {
-	$font1 = $_GET["font1"];
-}
-else{
-	$font1 = "Open+Sans";
-}
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-if(isset($_GET["font2"])) {
-	$font2 = $_GET["font2"];
-}
-else {
-	$font2 = "Merriweather";
-}
+$variables = "less/variables.less";
+$input = "less/creative.less";
+$output = "css/creative.css";
+
+$compile = false;
 
 if(isset($_GET["color1"])) {
 	$color1 = $_GET["color1"];
-}
-else {
-	$color1 = '#76ff03';
+	$compile = true;
 }
 
 if(isset($_GET["color2"])) {
 	$color2 = $_GET["color2"];
 }
-else {
-	$color2 = "#f05f40";
+
+if(isset($_GET["font1"])) {
+	$font1 = $_GET["font1"];
+}
+
+if(isset($_GET["font2"])) {
+	$font2 = $_GET["font2"];
 }
 
 if(isset($_GET["bg"])) {
 	$bg = $_GET["bg"];
 }
-else {
-	$bg = "http://sanstatic.com/Themes/startbootstrap-creative-1.0.2/img/header.jpg";
+
+if($compile) {
+	$content = "@primaryColor:" . $color1 . "; @secondaryColor: " . $color2 . "; @headingFont: " . $font1 . "; @paragraphFont: " . $font2 . "; @background:" . $bg . ";";
+
+	// Set the LESS variables
+	$vars = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
+	file_put_contents($variables, $vars);
+
+	// Compile the LESS to CSS
+	require "less/lessphp/lessc.inc.php";
+	$less = new lessc;
+	$less->compileFile($input, $output);
 }
 
-$content = "@primaryColor:" . $color1 . "; @secondaryColor: " . $color2 . "; @headingFont: " . $font1 . "; @paragraphFont: " . $font2 . "; @background:" . $bg . ";";
-
-// Set the LESS variables
-$vars = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
-file_put_contents($variables, $vars);
-
-// Compile the LESS to CSS
-require "less/lessphp/lessc.inc.php";
-$less = new lessc;
-$less->compileFile($input, $output);
-
 // Create static index.html
-//$phantom_script= dirname(__FILE__). '/js/get-website.js'; 
-//$response =  exec ('phantomjs ' . $phantom_script);
-//echo  htmlspecialchars($response);
+// $phantom_script = dirname(__FILE__). '/js/get-website.js'; 
+// $response = exec('phantomjs ' . $phantom_script);
+// echo htmlspecialchars($response);
 
 ?>
 
-<!-- Angular -->
+<!-- JS -->
 <script src="https://storage.googleapis.com/cdnsanstatic/js/angular.min.js"></script>
 <script src="https://storage.googleapis.com/cdnsanstatic/js/contentful.min.js"></script>
 <script src="http://sanstatic.com/site/js/angular-route.min.js"></script>
@@ -152,43 +143,45 @@ $less->compileFile($input, $output);
 </div>
 
 <script>
-var app = angular.module('deployApp', []);
-app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http) {
+	// Angular deployApp module with formCtrl controller
+	var app = angular.module('deployApp', []);
 
-   // Contentul API Client
-   var client = contentful.createClient({
-      // ID of Space
-     space: 'bhbl6r0rag31',
+	app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http) {
 
-     // A valid access token within the Space 
-     accessToken: '9249ff3590642679bcf612864e139395ad456fdad79e3870b78f9221da8d4726',
+	   // Contentul API Client
+	   var client = contentful.createClient({
+	      // ID of Space
+	     space: 'bhbl6r0rag31',
 
-     // Enable or disable SSL. Enabled by default.
-     secure: true,
+	     // A valid access token within the Space 
+	     accessToken: '9249ff3590642679bcf612864e139395ad456fdad79e3870b78f9221da8d4726',
 
-     // Set an alternate hostname, default shown.
-     host: 'cdn.contentful.com',
+	     // Enable or disable SSL. Enabled by default.
+	     secure: true,
 
-     // Resolve links to entries and assets
-     resolveLinks: true,
+	     // Set an alternate hostname, default shown.
+	     host: 'cdn.contentful.com',
 
-   });
+	     // Resolve links to entries and assets
+	     resolveLinks: true,
 
-   $scope.reset = function() {
-   	   var entries = $q.when(client.entries({content_type: 'brand'}));
-
-	   entries.then(function(entries) {
-	      $scope.brand = entries[0].fields;
-	      $scope.design = new Array();
-	      $scope.design["color1"] = entries[0].fields.primaryColor;
-	      $scope.design["color2"] = entries[0].fields.secondaryColor;
-	      $scope.design["font1"] = entries[0].fields.primaryFont;
-	      $scope.design["font2"] = entries[0].fields.secondaryFont;
-	      $scope.design["bg"] = entries[0].fields.picture;
 	   });
-   };
 
-   $scope.reset();
+	   $scope.reset = function() {
+	   	   var entries = $q.when(client.entries({content_type: 'brand'}));
 
-}]);
+		   entries.then(function(entries) {
+		      $scope.brand = entries[0].fields;
+		      $scope.design = new Array();
+		      $scope.design["color1"] = entries[0].fields.primaryColor;
+		      $scope.design["color2"] = entries[0].fields.secondaryColor;
+		      $scope.design["font1"] = entries[0].fields.primaryFont;
+		      $scope.design["font2"] = entries[0].fields.secondaryFont;
+		      $scope.design["bg"] = entries[0].fields.picture;
+		   });
+	   };
+
+	   $scope.reset();
+
+	}]);
 </script>
