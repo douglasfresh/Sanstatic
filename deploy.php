@@ -88,7 +88,7 @@ echo  htmlspecialchars($response);
 
 <script>
 var app = angular.module('myApp', []);
-app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http) {
+app.controller('formCtrl', ['$scope', '$q', function($scope, $q) {
 
    // Contentul API Client
    var client = contentful.createClient({
