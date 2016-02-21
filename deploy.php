@@ -103,7 +103,7 @@ $less->compileFile($input, $output);
 	    <div class="row">
 	        <div class="col-lg-12">
                 <h3>Parameters</h3>
-                <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
+                <p class="text-muted"><?php echo $content; ?></p>
 	        </div>
 	    </div>
 	    <div class="row">
@@ -132,6 +132,7 @@ $less->compileFile($input, $output);
 					</div>
 					<br/>
 					<div class="row">
+						<button ng-click="clear()">CLEAR</button>
 					    <button ng-click="reset()">RESET</button>
 					    <button type="submit">DEPLOY</button>
 					</div>
@@ -163,6 +164,11 @@ app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http)
      resolveLinks: true,
 
    });
+
+   $scope.clear = function() {
+   	   $scope.brand = {};
+   	   $scope.design = [];
+   };
 
    $scope.reset = function() {
    	   var entries = $q.when(client.entries({content_type: 'brand'}));
