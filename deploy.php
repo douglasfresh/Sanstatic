@@ -112,10 +112,11 @@ app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http)
 
 	   entries.then(function(entries) {
 	      $scope.contentful = entries[0].fields;
-	      $scope.design.color1 = entries[0].fields.colorScheme;
-	      $scope.design.font1 = entries[0].fields.primaryFont;
-	      $scope.design.font2 = entries[0].fields.secondaryFont;
-	      $scope.design.bg = entries[0].fields.picture;
+	      $scope.design = new Array();
+	      $scope.design["color1"] = entries[0].fields.colorScheme;
+	      $scope.design["font1"] = entries[0].fields.primaryFont;
+	      $scope.design["font2"] = entries[0].fields.secondaryFont;
+	      $scope.design["bg"] = entries[0].fields.picture;
 	   });
    };
 
