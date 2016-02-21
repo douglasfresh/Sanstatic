@@ -41,4 +41,8 @@ require "less/lessphp/lessc.inc.php";
 $less = new lessc;
 $less->compileFile($input, $output);
 
+$phantom_script= dirname(__FILE__). '/js/get-website.js'; 
+$response =  exec ('phantomjs ' . $phantom_script);
+echo  htmlspecialchars($response);
+
 ?>
