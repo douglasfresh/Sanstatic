@@ -29,9 +29,10 @@ file_put_contents($variables, $content);
 require "less/lessphp/lessc.inc.php";
 $less = new lessc;
 $less->compileFile($input, $output);
-$phantom_script= dirname(__FILE__). '/js/get-website.js'; 
-$response =  exec ('phantomjs ' . $phantom_script);
-echo  htmlspecialchars($response);
+
+//$phantom_script= dirname(__FILE__). '/js/get-website.js'; 
+//$response =  exec ('phantomjs ' . $phantom_script);
+//echo  htmlspecialchars($response);
 
 ?>
 
@@ -63,6 +64,7 @@ echo  htmlspecialchars($response);
   </form>
   <p>design = {{design}}</p>
   <p>contentful = {{contentful}}</p>
+  <p>variables = <?php echo $content; ?></p>
 </div>
 
 <script>
