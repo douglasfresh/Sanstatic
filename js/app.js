@@ -1,3 +1,6 @@
+// AngularJS Application
+var app = angular.module( "app", ['ngRoute'] );
+
 // Contentul API Client
 var client = contentful.createClient({
   // ID of Space
@@ -17,9 +20,7 @@ var client = contentful.createClient({
 
 });
 
-// AngularJS Application
-var app = angular.module( "app", ['ngRoute'] );
-
+// Specify Template Routes
 app.config(function($routeProvider) {
   $routeProvider
     .when("/",
@@ -35,18 +36,18 @@ app.config(function($routeProvider) {
     })
 });
 
-app.controller('ContentfulCtrl', ['$scope', '$q', '$http', function($scope, $q, $http) {
-  $scope.slides = Array();
-  $scope.sections = Array();
-  $scope.menu = Array();
+// Contenful Controller
+app.controller('ContentfulCtrl', ['$scope', '$q', '$http', '$location', function($scope, $q, $http, $location) {
 
-  $scope.setColor = function(color) {
-    less.modifyVars({
-      '@theme-primary': color
-    });
-  }
+  // View Model
+  var vm = this;
 
+  // Contentful Entries
   var entries = $q.when(client.entries());
+
+  vm.slides = Array();
+  vm.sections = Array();
+  vm.menu = Array();
   
   entries.then(function(entries) {
 
@@ -54,61 +55,73 @@ app.controller('ContentfulCtrl', ['$scope', '$q', '$http', function($scope, $q, 
 
       switch(entry.sys.contentType.sys.id) {
         case "header":
-          $scope.header = entry.fields;
+          vm.header = entry.fields;
           break;
 
         case "story":
-          $scope.story = entry.fields;
+          vm.story = entry.fields;
           break;
 
         case "start":
-          $scope.start = entry.fields;
+          vm.start = entry.fields;
           break;
 
         case "brand":
-          $scope.brand = entry.fields;
+          vm.brand = entry.fields;
           break;
 
         case "contact":
-          $scope.contact = entry.fields;
+          vm.contact = entry.fields;
           break;
 
         case "content":
-          $scope.content = entry.fields;
+          vm.content = entry.fields;
           break;
 
         case "design":
-          $scope.design = entry.fields;
+          vm.design = entry.fields;
           break;
 
         case "slide":
-          $scope.slides.push(entry.fields);
+          vm.slides.push(entry.fields);
           break;
 
         case "section":
-          $scope.sections.push(entry.fields);
+          vm.sections.push(entry.fields);
           break;
 
         case "menuItem":
-          $scope.menu.push(entry.fields);
+          vm.menu.push(entry.fields);
           break;
 
         default:
           break;
       } 
+
     });
+
   });
+
 }]);
 
+// Format Font Name
 app.filter("getFont", function() {
+
   //convert + to space
   return function(input){
     if(input) return input.replace(/\s+/g," "); 
   }
+
 });
 
+// Set Template On Route Change
 app.run(['$rootScope', function($rootScope) {
+
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-      //$rootScope.template = current.params.template;
+
+      if(current.params.template)
+        $rootScope.template = current.params.template;
+
     });
+
 }]);
