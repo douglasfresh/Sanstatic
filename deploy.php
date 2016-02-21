@@ -118,7 +118,7 @@ if($compile) {
 	    <div class="row">
 	        <div class="col-lg-12">
                 <h3>Forms</h3>
-                <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
+                <p class="text-muted">Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
 	        </div>
 	    </div>
 	    <div class="row">
