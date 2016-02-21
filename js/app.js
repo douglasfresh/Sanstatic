@@ -20,22 +20,6 @@ var client = contentful.createClient({
 
 });
 
-// Specify Template Routes
-app.config(function($routeProvider) {
-  $routeProvider
-    .when("/",
-    {
-      templateUrl: "templates/creative.html",
-    })
-    .when('/:template', 
-    {
-      templateUrl: function(params) {
-        return "templates/" + params.template + ".html";
-      },
-      controller: 'ContentfulCtrl'
-    })
-});
-
 // Contenful Controller
 app.controller('ContentfulCtrl', ['$scope', '$q', '$http', '$routeParams', function($scope, $q, $http, $routeParams) {
 
@@ -104,7 +88,6 @@ app.controller('ContentfulCtrl', ['$scope', '$q', '$http', '$routeParams', funct
 
 }]);
 
-// Format Font Name
 app.filter("getFont", function() {
 
   //convert + to space
@@ -113,15 +96,3 @@ app.filter("getFont", function() {
   }
 
 });
-
-// Set Template On Route Change
-app.run(['$rootScope', function($rootScope) {
-
-    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-
-      if(current.params.template)
-        $rootScope.template = current.params.template;
-
-    });
-
-}]);
