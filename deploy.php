@@ -142,9 +142,9 @@ $less->compileFile($input, $output);
 	    	<div class="col-lg-12">
 		    	<h3>Resources</h3>
 		    	<ul>
-		    		<li><a href="https://www.google.com/design/spec/style/color.html">Google Colors</a></li>
-		    		<li><a href="https://www.google.com/design/spec/style/color.html">Google Fonts</a></li>
-		    		<li><a href="https://www.pexels.com/">Pexel Stock Photos</a></li>
+		    		<li><a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Colors</a></li>
+		    		<li><a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Fonts</a></li>
+		    		<li><a href="https://www.pexels.com/" target="_blank">Pexel Stock Photos</a></li>
 		    	</ul>
 		    </div>
 		</div>
