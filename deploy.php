@@ -16,9 +16,15 @@ $output = "css/creative.css";
 if(isset($_GET["font1"])) {
 	$font1 = $_GET["font1"];
 }
+else{
+	$font1 = "Open+Sans";
+}
 
 if(isset($_GET["font2"])) {
 	$font2 = $_GET["font2"];
+}
+else {
+	$font2 = "Merriweather";
 }
 
 if(isset($_GET["color1"])) {
@@ -31,14 +37,22 @@ else {
 if(isset($_GET["color2"])) {
 	$color2 = $_GET["color2"];
 }
+else {
+	$color2 = "#f05f40";
+}
 
 if(isset($_GET["bg"])) {
 	$bg = $_GET["bg"];
 }
+else {
+	$bg = "http://sanstatic.com/Themes/startbootstrap-creative-1.0.2/img/header.jpg";
+}
+
+$content = "@primaryColor:" . $color1 . "; @secondaryColor: " . $color2 . "; @headingFont: " . $font1 . "; @paragraphFont: " . $font2 . "; @background:" . $bg . ";";
 
 // Set the LESS variables
-$content = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
-file_put_contents($variables, $content);
+$vars = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
+file_put_contents($variables, $vars);
 
 // Compile the LESS to CSS
 require "less/lessphp/lessc.inc.php";
@@ -78,9 +92,9 @@ $less->compileFile($input, $output);
     <button ng-click="reset()">RESET</button>
     <button type="submit">DEPLOY</button>
   </form>
-  <p>brand = {{brand}}</p>
-  <p>contentful = {{contentful}}</p>
-  <p>variables = <?php echo $content; ?></p>
+  <p>Contentful Brand = {{brand}}</p>
+  <p ng-repeat="(field, value) in brand">Form Inputs = {{contentful.toString();}}</p>
+  <p>URL Parameters = <?php echo $content; ?></p>
 </div>
 
 <script>
@@ -111,6 +125,7 @@ app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http)
 
 	   entries.then(function(entries) {
 	      $scope.brand = entries[0].fields;
+	      $scope.design = new Array();
 	      $scope.design["color1"] = entries[0].fields.colorScheme;
 	      $scope.design["font1"] = entries[0].fields.primaryFont;
 	      $scope.design["font2"] = entries[0].fields.secondaryFont;
