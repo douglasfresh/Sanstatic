@@ -100,7 +100,7 @@ $less->compileFile($input, $output);
 		</div>
 		<div class="container">
 		    <div class="row">
-		        <div class="col-lg-4 text-center">
+		        <div class="col-lg-12 text-center">
 		            <div class="service-box">
 		                <i class="fa fa-4x  wow bounceIn text-primary fa-lightbulb-o" style="visibility: visible; animation-name: bounceIn;"></i>
 		                <h3>Brand</h3>
@@ -108,7 +108,9 @@ $less->compileFile($input, $output);
 		                <p class="text-muted">{{brand}}</p>
 		            </div>
 		        </div>
-		        <div class="col-lg-4 text-center">
+		    </div>
+		    <div class="row">
+		        <div class="col-lg-12 text-center">
 		            <div class="service-box">
 		                <i data-wow-delay=".1s" class="fa fa-4x  wow bounceIn text-primary fa-usb" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
 		                <h3>Forms</h3>
@@ -116,7 +118,9 @@ $less->compileFile($input, $output);
 		                <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
 		            </div>
 		        </div>
-		        <div class="col-lg-4 text-center">
+		    </div>
+		    <div class="row">
+		        <div class="col-lg-12 text-center">
 		            <div class="service-box">
 		                <i data-wow-delay=".1s" class="fa fa-4x  wow bounceIn text-primary fa-usb" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
 		                <h3>Parameters</h3>
