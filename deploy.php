@@ -1,18 +1,8 @@
 <?php
 
-// Take in design specs
-// Create variables.less
-// Compile less
-// Create static index.html with Phantom
-// Push to GitHub
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-$variables = "less/variables.less";
-$input = "less/creative.less";
-$output = "css/creative.css";
 
 $compile = false;
 
@@ -38,22 +28,26 @@ if(isset($_GET["bg"])) {
 }
 
 if($compile) {
-	$content = "@primaryColor:" . $color1 . "; @secondaryColor: " . $color2 . "; @headingFont: " . $font1 . "; @paragraphFont: " . $font2 . "; @background:" . $bg . ";";
+	// Resources
+	$variables = "less/variables.less";
+	$input = "less/creative.less";
+	$output = "css/creative.css";
 
 	// Set the LESS variables
-	$vars = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
-	file_put_contents($variables, $vars);
+	$content = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
+	file_put_contents($variables, $content);
 
 	// Compile the LESS to CSS
 	require "less/lessphp/lessc.inc.php";
 	$less = new lessc;
 	$less->compileFile($input, $output);
 }
+else {
+	$content = "@primaryColor:" . $color1 . "; @secondaryColor: " . $color2 . "; @headingFont: " . $font1 . "; @paragraphFont: " . $font2 . "; @background:" . $bg . ";";
+}
 
-// Create static index.html
-// $phantom_script = dirname(__FILE__). '/js/get-website.js'; 
-// $response = exec('phantomjs ' . $phantom_script);
-// echo htmlspecialchars($response);
+// Create static index.html with PhantomJS
+// Push new CSS & HTML to GitHub
 
 ?>
 
