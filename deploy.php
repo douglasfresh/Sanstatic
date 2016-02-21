@@ -107,21 +107,33 @@ $less->compileFile($input, $output);
                 <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
 	        </div>
 	    </div>
-	    <div class="row settings">
+	    <div class="settings">
 	    	<h3>Settings</h3>
 		    <form novalidate>
-			    <label>Primary Color</label>
-			    <input type="text" ng-model="design.color1" name="color1"><br/>
-			    <label>Secondary Color</label>
-			    <input type="text" ng-model="design.color2" name="color2"><br/>
-			    <label>Heading Font</label>
-			    <input type="text" ng-model="design.font1" name="font1"><br/>
-		    	<label>Paragraph Font</label>
-		    	<input type="text" ng-model="design.font2" name="font2"><br/>
-			    <label>Background</label>
-			    <input type="text" ng-model="design.bg" name="bg"><br/>
-			    <button ng-click="reset()">RESET</button>
-			    <button type="submit">DEPLOY</button>
+		    	<div class="row">
+				    <label>Primary Color</label>
+				    <input type="text" ng-model="design.color1" name="color1"><br/>
+				</div>
+				<div class="row">
+				    <label>Secondary Color</label>
+				    <input type="text" ng-model="design.color2" name="color2"><br/>
+			    </div>
+				<div class="row">
+				    <label>Heading Font</label>
+				    <input type="text" ng-model="design.font1" name="font1"><br/>
+			    </div>
+				<div class="row">
+			    	<label>Paragraph Font</label>
+			    	<input type="text" ng-model="design.font2" name="font2"><br/>
+		    	</div>
+				<div class="row">
+				    <label>Background</label>
+				    <input type="text" ng-model="design.bg" name="bg"><br/>
+				</div>
+				<div class="row">
+				    <button ng-click="reset()">RESET</button>
+				    <button type="submit">DEPLOY</button>
+				</div>
 		   	</form>
 		</div>
 	</div>
