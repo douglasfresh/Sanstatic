@@ -91,7 +91,7 @@ $less->compileFile($input, $output);
 		<div class="row">
 	    	<div class="col-lg-12">
 		    	<h3>Settings</h3>
-			    <form novalidate action="deploy.php">
+			    <form novalidate action="deploy.php" method="get">
 			    	<div class="row">
 					    <label>Primary Color</label>
 					    <input type="text" ng-model="design.color1" name="color1"><br/>
