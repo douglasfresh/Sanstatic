@@ -99,7 +99,8 @@ app.controller('formCtrl', function($scope) {
       // ID of Space
      space: 'bhbl6r0rag31',
 
-     // A valid access token within the Space accessToken: '9249ff3590642679bcf612864e139395ad456fdad79e3870b78f9221da8d4726',
+     // A valid access token within the Space 
+     accessToken: '9249ff3590642679bcf612864e139395ad456fdad79e3870b78f9221da8d4726',
 
      // Enable or disable SSL. Enabled by default.
      secure: true,
