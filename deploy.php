@@ -81,32 +81,23 @@ $less->compileFile($input, $output);
 	<div class="container">
 	    <div class="row">
 	        <div class="col-lg-12 text-center">
-	            <div class="service-box">
-	                <i class="fa fa-4x  wow bounceIn text-primary fa-lightbulb-o" style="visibility: visible; animation-name: bounceIn;"></i>
-	                <h3>Brand</h3>
-	                <hr class="primary">
-	                <p class="text-muted">{{brand}}</p>
-	            </div>
+                <h3>Brand</h3>
+                <hr class="primary">
+                <p class="text-muted">{{brand}}</p>
 	        </div>
 	    </div>
 	    <div class="row">
 	        <div class="col-lg-12 text-center">
-	            <div class="service-box">
-	                <i data-wow-delay=".1s" class="fa fa-4x  wow bounceIn text-primary fa-usb" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
-	                <h3>Forms</h3>
-	                <hr class="primary">
-	                <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
-	            </div>
+                <h3>Forms</h3>
+                <hr class="primary">
+                <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
 	        </div>
 	    </div>
 	    <div class="row">
 	        <div class="col-lg-12 text-center">
-	            <div class="service-box">
-	                <i data-wow-delay=".1s" class="fa fa-4x  wow bounceIn text-primary fa-usb" style="visibility: visible; animation-delay: 0.1s; animation-name: bounceIn;"></i>
-	                <h3>Parameters</h3>
-	                <hr class="primary">
-	                <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
-	            </div>
+                <h3>Parameters</h3>
+                <hr class="primary">
+                <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
 	        </div>
 	    </div>    
 	</div>
