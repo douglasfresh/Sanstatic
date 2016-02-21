@@ -89,12 +89,10 @@ echo  htmlspecialchars($response);
 <script>
 var app = angular.module('myApp', []);
 app.controller('formCtrl', function($scope) {
-    
-   $scope.contentful = {firstName:"John", lastName:"Doe"};
+
    $scope.reset = function() {
        $scope.design = angular.copy($scope.contentful);
    };
-   $scope.reset();
 
    // Contentul API Client
    var client = contentful.createClient({
@@ -122,6 +120,20 @@ app.controller('formCtrl', function($scope) {
 });
 
 </script>
+
+<!-- jQuery -->
+<script src="http://sanstatic.com/site/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="http://sanstatic.com/site/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="http://sanstatic.com/site/js/jquery.easing.min.js"></script>
+<script src="http://sanstatic.com/site/js/jquery.fittext.js"></script>
+<script src="http://sanstatic.com/site/js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="http://sanstatic.com/site/js/creative.js"></script>
 
 </body>
 </html>
