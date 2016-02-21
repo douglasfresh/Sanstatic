@@ -79,7 +79,7 @@ $less->compileFile($input, $output);
 <!-- Inline CSS -->
 <style>
 	.settings {
-		width:400px;
+		width:250px;
 	}
 	form input {
 		float:right;
@@ -130,6 +130,7 @@ $less->compileFile($input, $output);
 				    <label>Background</label>
 				    <input type="text" ng-model="design.bg" name="bg"><br/>
 				</div>
+				<br/>
 				<div class="row">
 				    <button ng-click="reset()">RESET</button>
 				    <button type="submit">DEPLOY</button>
