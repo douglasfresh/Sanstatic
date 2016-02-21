@@ -78,8 +78,8 @@ $less->compileFile($input, $output);
     <button ng-click="reset()">RESET</button>
     <button type="submit">DEPLOY</button>
   </form>
-  <p>brand = {{brand.toString();}}</p>
-  <p>contentful = {{contentful.toString();}}</p>
+  <p>brand = {{brand}}</p>
+  <p>contentful = {{contentful}}</p>
   <p>variables = <?php echo $content; ?></p>
 </div>
 
@@ -110,9 +110,7 @@ app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http)
    	   var entries = $q.when(client.entries({content_type: 'brand'}));
 
 	   entries.then(function(entries) {
-	   	  $scope.brand = new Array();
-	      $scope.brand = angular.fromJson(entries[0].fields);
-	      $scope.design = new Array();
+	      $scope.brand = entries[0].fields;
 	      $scope.design["color1"] = entries[0].fields.colorScheme;
 	      $scope.design["font1"] = entries[0].fields.primaryFont;
 	      $scope.design["font2"] = entries[0].fields.secondaryFont;
