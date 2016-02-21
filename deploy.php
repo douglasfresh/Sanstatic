@@ -77,7 +77,7 @@ $less->compileFile($input, $output);
 <!-- Inline CSS -->
 <style>
 	.settings {
-		width:250px;
+		width:300px;
 	}
 	form input {
 		float:right;
