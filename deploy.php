@@ -93,7 +93,7 @@ $less->compileFile($input, $output);
     <button type="submit">DEPLOY</button>
   </form>
   <p>Contentful Brand = {{brand}}</p>
-  <p ng-repeat="(field, value) in brand">Form Inputs = {{contentful.toString();}}</p>
+  <p>Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
   <p>URL Parameters = <?php echo $content; ?></p>
 </div>
 
