@@ -24,12 +24,12 @@ app.config(function($routeProvider) {
   $routeProvider
     .when("/",
     {
-      templateUrl: "templates/creative.html",
+      templateUrl: "http://sanstatic.com/site/templates/creative.html",
     })
     .when('/:template', 
     {
       templateUrl: function(params) {
-        return 'templates/' + params.template + '.html';
+        return 'http://sanstatic.com/site/templates/' + params.template + '.html';
       },
       controller: 'ContentfulCtrl'
     })
