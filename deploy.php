@@ -76,8 +76,9 @@ $less->compileFile($input, $output);
 
 <!-- Inline CSS -->
 <style>
-	.settings {
+	form {
 		width:300px;
+    	margin-left:15px;
 	}
 	form input {
 		float:right;
@@ -105,38 +106,36 @@ $less->compileFile($input, $output);
                 <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
 	        </div>
 	    </div>
-	    <div class="settings row">
+	    <div class="row">
 	    	<div class="col-lg-12">
 		    	<h3>Settings</h3>
-		    	<p>
-				    <form novalidate>
-				    	<div class="row">
-						    <label>Primary Color</label>
-						    <input type="text" ng-model="design.color1" name="color1"><br/>
-						</div>
-						<div class="row">
-						    <label>Secondary Color</label>
-						    <input type="text" ng-model="design.color2" name="color2"><br/>
-					    </div>
-						<div class="row">
-						    <label>Heading Font</label>
-						    <input type="text" ng-model="design.font1" name="font1"><br/>
-					    </div>
-						<div class="row">
-					    	<label>Paragraph Font</label>
-					    	<input type="text" ng-model="design.font2" name="font2"><br/>
-				    	</div>
-						<div class="row">
-						    <label>Background</label>
-						    <input type="text" ng-model="design.bg" name="bg"><br/>
-						</div>
-						<br/>
-						<div class="row">
-						    <button ng-click="reset()">RESET</button>
-						    <button type="submit">DEPLOY</button>
-						</div>
-				   	</form>
-				</p>
+			    <form novalidate>
+			    	<div class="row">
+					    <label>Primary Color</label>
+					    <input type="text" ng-model="design.color1" name="color1"><br/>
+					</div>
+					<div class="row">
+					    <label>Secondary Color</label>
+					    <input type="text" ng-model="design.color2" name="color2"><br/>
+				    </div>
+					<div class="row">
+					    <label>Heading Font</label>
+					    <input type="text" ng-model="design.font1" name="font1"><br/>
+				    </div>
+					<div class="row">
+				    	<label>Paragraph Font</label>
+				    	<input type="text" ng-model="design.font2" name="font2"><br/>
+			    	</div>
+					<div class="row">
+					    <label>Background</label>
+					    <input type="text" ng-model="design.bg" name="bg"><br/>
+					</div>
+					<br/>
+					<div class="row">
+					    <button ng-click="reset()">RESET</button>
+					    <button type="submit">DEPLOY</button>
+					</div>
+			   	</form>
 		   </div>
 		</div>
 	</div>
