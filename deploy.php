@@ -59,7 +59,7 @@ echo  htmlspecialchars($response);
 <head>
 	<title>Design Elements Configuration</title>
 	<!-- Angular -->
-	<script src="https://storage.googleapis.com/cdnsanstatic/js/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://storage.googleapis.com/cdnsanstatic/js/contentful.min.js"></script>
     <script src="http://sanstatic.com/site/js/angular-route.min.js"></script>
 
@@ -72,7 +72,7 @@ echo  htmlspecialchars($response);
 <div ng-app="myApp" ng-controller="formCtrl">
   <form novalidate>
     Primary Color:<br>
-    <input type="text" ng-model="design.color1"> <a href="https://www.google.com/design/spec/style/color.html">Google Color Guide</a><br>
+    <input type="text" ng-model="design.color1"> <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Color Guide</a><br>
     Heading Font:<br>
     <input type="text" ng-model="design.font1"><br>
     Paragraph Font:<br>
