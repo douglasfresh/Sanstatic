@@ -108,34 +108,36 @@ $less->compileFile($input, $output);
 	        </div>
 	    </div>
 	    <div class="settings row">
-	    	<h3>Settings</h3>
-		    <form novalidate>
-		    	<div class="row">
-				    <label>Primary Color</label>
-				    <input type="text" ng-model="design.color1" name="color1"><br/>
-				</div>
-				<div class="row">
-				    <label>Secondary Color</label>
-				    <input type="text" ng-model="design.color2" name="color2"><br/>
-			    </div>
-				<div class="row">
-				    <label>Heading Font</label>
-				    <input type="text" ng-model="design.font1" name="font1"><br/>
-			    </div>
-				<div class="row">
-			    	<label>Paragraph Font</label>
-			    	<input type="text" ng-model="design.font2" name="font2"><br/>
-		    	</div>
-				<div class="row">
-				    <label>Background</label>
-				    <input type="text" ng-model="design.bg" name="bg"><br/>
-				</div>
-				<br/>
-				<div class="row">
-				    <button ng-click="reset()">RESET</button>
-				    <button type="submit">DEPLOY</button>
-				</div>
-		   	</form>
+	    	<div class="col-lg-12">
+		    	<h3>Settings</h3>
+			    <form novalidate>
+			    	<div class="row">
+					    <label>Primary Color</label>
+					    <input type="text" ng-model="design.color1" name="color1"><br/>
+					</div>
+					<div class="row">
+					    <label>Secondary Color</label>
+					    <input type="text" ng-model="design.color2" name="color2"><br/>
+				    </div>
+					<div class="row">
+					    <label>Heading Font</label>
+					    <input type="text" ng-model="design.font1" name="font1"><br/>
+				    </div>
+					<div class="row">
+				    	<label>Paragraph Font</label>
+				    	<input type="text" ng-model="design.font2" name="font2"><br/>
+			    	</div>
+					<div class="row">
+					    <label>Background</label>
+					    <input type="text" ng-model="design.bg" name="bg"><br/>
+					</div>
+					<br/>
+					<div class="row">
+					    <button ng-click="reset()">RESET</button>
+					    <button type="submit">DEPLOY</button>
+					</div>
+			   	</form>
+		   </div>
 		</div>
 	</div>
 </div>
