@@ -55,7 +55,7 @@ echo  htmlspecialchars($response);
 <html lang="en" ng-app="app" ng-controller="ContentfulCtrl">
 
 <head>
-	<title>Design elements configuration</title>
+	<title>Design Elements Configuration</title>
 	<!-- Angular -->
 	<script src="https://storage.googleapis.com/cdnsanstatic/js/angular.min.js"></script>
     <script src="https://storage.googleapis.com/cdnsanstatic/js/contentful.min.js"></script>
@@ -65,34 +65,64 @@ echo  htmlspecialchars($response);
     <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/animate.min.css" type="text/css">
     <link rel="stylesheet" href="http://sanstatic.com/site/css/creative.css" type="text/css">
+</head>
 
-<div ng-controller="ExampleController">
-  <form novalidate class="simple-form">
-  	<h1>Design elements configuration</h1>
-    Name: <input type="text" ng-model="user.name" /><br />
-    E-mail: <input type="email" ng-model="user.email" /><br />
-    Gender: <input type="radio" ng-model="user.gender" value="male" />male
-    <input type="radio" ng-model="user.gender" value="female" />female<br />
-    <input type="button" ng-click="reset()" value="Reset" />
-    <input type="submit" ng-click="update(user)" value="Save" />
+<div ng-app="myApp" ng-controller="formCtrl">
+  <form novalidate>
+    Primary Color:<br>
+    <input type="text" ng-model="design.color1"><br>
+    Secondary Color:<br>
+    <input type="text" ng-model="design.color2"><br>
+    Heading Font:<br>
+    <input type="text" ng-model="design.font1"><br>
+    Paragraph Font:<br>
+    <input type="text" ng-model="design.font2"><br>
+    Background:<br>
+    <input type="text" ng-model="design.bg"><br>
+    <br><br>
+    <button ng-click="reset()">RESET</button>
   </form>
-  <pre>user = {{user.name}}, {{user.email}}, and {{user.gender}}</pre>
-  <pre>master = {{master | json}}</pre>
+  <p>form = {{design}}</p>
+  <p>contentful = {{contentful}}</p>
 </div>
 
 <script>
-  angular.module('formExample', [])
-    .controller('ExampleController', ['$scope', function($scope) {
-      $scope.master = {};
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
+    
+   $scope.contentful = {firstName:"John", lastName:"Doe"};
+   $scope.reset = function() {
+       $scope.design = angular.copy($scope.contentful);
+   };
+   $scope.reset();
 
-      $scope.update = function(user) {
-        $scope.user = angular.copy(user);
-      };
+   // Contentul API Client
+   var client = contentful.createClient({
+      // ID of Space
+     space: 'bhbl6r0rag31',
 
-      $scope.reset = function() {
-        $scope.user = angular.copy($scope.master);
-      };
+     // A valid access token within the Space accessToken: '9249ff3590642679bcf612864e139395ad456fdad79e3870b78f9221da8d4726',
 
-      $scope.reset();
-    }]);
+     // Enable or disable SSL. Enabled by default.
+     secure: true,
+
+     // Set an alternate hostname, default shown.
+     host: 'cdn.contentful.com',
+
+     // Resolve links to entries and assets
+     resolveLinks: true,
+
+   });
+
+   var entries = $q.when(client.entries({content_type: 'brand'}));
+
+   entries.then(function(entries) {
+      $scope.contentful = entries[0].fields;
+   }
+});
+
 </script>
+
+</body>
+</html>
+
