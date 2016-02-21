@@ -1,78 +1,19 @@
-<!--
-<?php
+<!-- Angular -->
+<script src="https://storage.googleapis.com/cdnsanstatic/js/angular.min.js"></script>
+<script src="https://storage.googleapis.com/cdnsanstatic/js/contentful.min.js"></script>
+<script src="http://sanstatic.com/site/js/angular-route.min.js"></script>
 
-/* testing the forms
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$variables = "less/variables.less";
-$input = "less/creative.less";
-$output = "css/creative.css";
-
-// Take in design specs
-// Create variables.less
-// Compile less
-// Create static index.html with Phantom
-// Push to GitHub
-
-if(isset($_GET["font1"])) 
-	$font1 = $_GET["font1"];
-
-if(isset($_GET["font2"]))
-	$font2 = $_GET["font2"];
-
-if(isset($_GET["color1"]))
-	$color1 = "#" . $_GET["color1"];
-else
-	$color1 = '#76ff03';
-
-if(isset($_GET["color2"]))
-	$color2 = $_GET["color2"];
-
-if(isset($_GET["bg"])) 
-	$bg = $_GET["bg"];
-
-$content = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
-
-echo $content;
-
-file_put_contents($variables, $content);
-
-require "less/lessphp/lessc.inc.php";
-$less = new lessc;
-$less->compileFile($input, $output);
-
-$phantom_script= dirname(__FILE__). '/js/get-website.js'; 
-$response =  exec ('phantomjs ' . $phantom_script);
-echo  htmlspecialchars($response);
-
-*/ 
-
-?>
--->
-
-<!DOCTYPE html>
-<html lang="en" ng-app="app" ng-controller="ContentfulCtrl">
-
-<head>
-	<title>Design Elements Configuration</title>
-	<!-- Angular -->
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://storage.googleapis.com/cdnsanstatic/js/contentful.min.js"></script>
-    <script src="http://sanstatic.com/site/js/angular-route.min.js"></script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/animate.min.css" type="text/css">
-    <link rel="stylesheet" href="http://sanstatic.com/site/css/creative.css" type="text/css">
-</head>
+<!-- CSS -->
+<link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/animate.min.css" type="text/css">
+<link rel="stylesheet" href="http://sanstatic.com/site/css/creative.css" type="text/css">
 
 <div ng-app="myApp" ng-controller="formCtrl">
   <form novalidate>
     Primary Color:<br>
-    <input type="text" ng-model="design.color1"> <a href="https://www.google.com/design/spec/style/color.html" target="_blank">Google Color Guide</a><br>
+    <input type="text" ng-model="design.color1"><br>
+    Secondary Color:<br>
+    <input type="text" ng-model="design.color2"><br>
     Heading Font:<br>
     <input type="text" ng-model="design.font1"><br>
     Paragraph Font:<br>
@@ -82,13 +23,13 @@ echo  htmlspecialchars($response);
     <br><br>
     <button ng-click="reset()">RESET</button>
   </form>
-  <p>form = {{design}}</p>
+  <p>design = {{form}}</p>
   <p>contentful = {{contentful}}</p>
 </div>
 
 <script>
 var app = angular.module('myApp', []);
-app.controller('formCtrl', ['$scope', '$q', function($scope, $q) {
+app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http) {
 
    // Contentul API Client
    var client = contentful.createClient({
@@ -123,23 +64,4 @@ app.controller('formCtrl', ['$scope', '$q', function($scope, $q) {
    };
 
 }]);
-
 </script>
-
-<!-- jQuery -->
-<script src="http://sanstatic.com/site/js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="http://sanstatic.com/site/js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="http://sanstatic.com/site/js/jquery.easing.min.js"></script>
-<script src="http://sanstatic.com/site/js/jquery.fittext.js"></script>
-<script src="http://sanstatic.com/site/js/wow.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="http://sanstatic.com/site/js/creative.js"></script>
-
-</body>
-</html>
-
