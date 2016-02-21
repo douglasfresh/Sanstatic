@@ -30,14 +30,14 @@ app.config(function($routeProvider) {
     .when('/:template', 
     {
       templateUrl: function(params) {
-        return 'templates/' + params.template + '.html';
+        return "templates/" + params.template + ".html";
       },
       controller: 'ContentfulCtrl'
     })
 });
 
 // Contenful Controller
-app.controller('ContentfulCtrl', ['$scope', '$q', '$http', '$location', function($scope, $q, $http, $location) {
+app.controller('ContentfulCtrl', ['$scope', '$q', '$http', '$routeParams', function($scope, $q, $http, $routeParams) {
 
   // View Model
   var vm = this;
@@ -48,7 +48,7 @@ app.controller('ContentfulCtrl', ['$scope', '$q', '$http', '$location', function
   vm.slides = Array();
   vm.sections = Array();
   vm.menu = Array();
-  
+
   entries.then(function(entries) {
 
     entries.forEach(function(entry) {
