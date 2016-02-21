@@ -107,7 +107,7 @@ $less->compileFile($input, $output);
                 <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
 	        </div>
 	    </div>
-	    <div class="settings">
+	    <div class="settings row">
 	    	<h3>Settings</h3>
 		    <form novalidate>
 		    	<div class="row">
