@@ -122,7 +122,7 @@ $less->compileFile($input, $output);
 		</div>
 	    <div class="row">
 	        <div class="col-lg-12">
-                <h3>Brand</h3>
+                <h3>Contentful</h3>
                 <p class="text-muted">{{brand}}</p>
 	        </div>
 	    </div>
@@ -134,7 +134,7 @@ $less->compileFile($input, $output);
 	    </div>
 	    <div class="row">
 	        <div class="col-lg-12">
-                <h3>Parameters</h3>
+                <h3>Variables</h3>
                 <p class="text-muted"><?php echo $content; ?></p>
 	        </div>
 	    </div>
