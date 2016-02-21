@@ -7,24 +7,29 @@ error_reporting(E_ALL);
 $compile = false;
 
 if(isset($_GET["color1"])) {
-	$color1 = $_GET["color1"];
 	$compile = true;
+	$color1 = $_GET["color1"];
+	$content = "@primaryColor:" . $color1 . ";";
 }
 
 if(isset($_GET["color2"])) {
 	$color2 = $_GET["color2"];
+	$content += " @secondaryColor:" . $color2 . ";";
 }
 
 if(isset($_GET["font1"])) {
 	$font1 = $_GET["font1"];
+	$content += " @headingFont:" . $font1 . ";";
 }
 
 if(isset($_GET["font2"])) {
 	$font2 = $_GET["font2"];
+	$content += " @paragraphFont:" . $font2 . ";";
 }
 
 if(isset($_GET["bg"])) {
 	$bg = $_GET["bg"];
+	$content += " @background:" . $bg . ";";
 }
 
 if($compile) {
@@ -34,16 +39,13 @@ if($compile) {
 	$output = "css/creative.css";
 
 	// Set the LESS variables
-	$content = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
-	file_put_contents($variables, $content);
+	$vars = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
+	file_put_contents($variables, $vars);
 
 	// Compile the LESS to CSS
 	require "less/lessphp/lessc.inc.php";
 	$less = new lessc;
 	$less->compileFile($input, $output);
-}
-else {
-	$content = "@primaryColor:" . $color1 . "; @secondaryColor: " . $color2 . "; @headingFont: " . $font1 . "; @paragraphFont: " . $font2 . "; @background:" . $bg . ";";
 }
 
 // Create static index.html with PhantomJS
