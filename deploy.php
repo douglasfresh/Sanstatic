@@ -76,6 +76,16 @@ $less->compileFile($input, $output);
 <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/animate.min.css" type="text/css">
 <link rel="stylesheet" href="http://sanstatic.com/site/css/creative.css" type="text/css">
 
+<!-- Inline CSS -->
+<style>
+	.settings {
+		width:400px;
+	}
+	form input {
+		float:right;
+	}
+</style>
+
 <!-- deployApp -->
 <div ng-app="deployApp" ng-controller="formCtrl" action="deploy.php">
 	<div class="container" style="width:90%">
@@ -97,20 +107,23 @@ $less->compileFile($input, $output);
                 <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
 	        </div>
 	    </div>
-	    <form novalidate>
-		    <label>Primary Color:</label>
-		    <input type="text" ng-model="design.color1" name="color1"><br/>
-		    <label>Secondary Color:</label>
-		    <input type="text" ng-model="design.color2" name="color2"><br/>
-		    <label>Heading Font:</label>
-		    <input type="text" ng-model="design.font1" name="font1"><br/>
-	    	<label>Paragraph Font:</label>
-	    	<input type="text" ng-model="design.font2" name="font2"><br/>
-		    <label>Background:</label>
-		    <input type="text" ng-model="design.bg" name="bg"><br/>
-		    <button ng-click="reset()">RESET</button>&nsbp;or&nsbp;
-		    <button type="submit">DEPLOY</button>
-	   	</form>
+	    <div class="row settings">
+	    	<h3>Settings</h3>
+		    <form novalidate>
+			    <label>Primary Color</label>
+			    <input type="text" ng-model="design.color1" name="color1"><br/>
+			    <label>Secondary Color</label>
+			    <input type="text" ng-model="design.color2" name="color2"><br/>
+			    <label>Heading Font</label>
+			    <input type="text" ng-model="design.font1" name="font1"><br/>
+		    	<label>Paragraph Font</label>
+		    	<input type="text" ng-model="design.font2" name="font2"><br/>
+			    <label>Background</label>
+			    <input type="text" ng-model="design.bg" name="bg"><br/>
+			    <button ng-click="reset()">RESET</button>
+			    <button type="submit">DEPLOY</button>
+		   	</form>
+		</div>
 	</div>
 </div>
 
