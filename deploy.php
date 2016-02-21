@@ -86,7 +86,7 @@ echo  htmlspecialchars($response);
       $scope.master = {};
 
       $scope.update = function(user) {
-        $scope.master = angular.copy(user);
+        $scope.user = angular.copy(user);
       };
 
       $scope.reset = function() {
