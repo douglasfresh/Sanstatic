@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $compile = false;
+$content = "No variables found.";
 
 if(isset($_GET["color1"])) {
 	$compile = true;
@@ -40,6 +41,7 @@ if($compile) {
 
 	// Set the LESS variables
 	$vars = "@theme-primary:" . $color1 . "; @theme-dark:#222;";
+	$content = $vars;
 	file_put_contents($variables, $vars);
 
 	// Compile the LESS to CSS
