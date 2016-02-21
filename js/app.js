@@ -35,7 +35,7 @@ app.config(function($routeProvider) {
     })
 });
 
-app.controller('ContentfulCtrl', ['$scope', '$q', function($scope, $q) {
+app.controller('ContentfulCtrl', ['$scope', '$q', '$http', function($scope, $q, $http) {
   $scope.slides = Array();
   $scope.sections = Array();
   $scope.menu = Array();
@@ -67,7 +67,6 @@ app.controller('ContentfulCtrl', ['$scope', '$q', function($scope, $q) {
 
         case "brand":
           $scope.brand = entry.fields;
-          $scope.setColor($scope.brand.colorScheme);
           break;
 
         case "contact":

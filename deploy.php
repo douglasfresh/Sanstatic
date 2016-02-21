@@ -21,7 +21,7 @@ if(isset($_GET["font2"]))
 	$font2 = $_GET["font2"];
 
 if(isset($_GET["color1"]))
-	$color1 = $_GET["color1"];
+	$color1 = "#" . $_GET["color1"];
 else
 	$color1 = '#76ff03';
 
@@ -39,6 +39,6 @@ file_put_contents($variables, $content);
 
 require "less/lessphp/lessc.inc.php";
 $less = new lessc;
-echo $less->compileFile($input, $output);
+$less->compileFile($input, $output);
 
 ?>
