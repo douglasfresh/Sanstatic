@@ -78,45 +78,53 @@ $less->compileFile($input, $output);
 
 <!-- deployApp -->
 <div ng-app="deployApp" ng-controller="formCtrl" action="deploy.php">
-	<div class="container">
+	<div class="container" style="width:90%">
 	    <div class="row">
-	        <div class="col-lg-12 text-center">
+	        <div class="col-lg-12">
                 <h3>Brand</h3>
                 <hr class="primary">
                 <p class="text-muted">{{brand}}</p>
 	        </div>
 	    </div>
 	    <div class="row">
-	        <div class="col-lg-12 text-center">
+	        <div class="col-lg-12">
                 <h3>Forms</h3>
                 <hr class="primary">
                 <p class="text-muted">Form Input = Color1: {{design.color1}}, Color2: {{design.color2}}, Font1: {{design.font1}}, Font2: {{design.font2}}, and BG: {{design.bg}}</p>
 	        </div>
 	    </div>
 	    <div class="row">
-	        <div class="col-lg-12 text-center">
+	        <div class="col-lg-12">
                 <h3>Parameters</h3>
                 <hr class="primary">
                 <p class="text-muted">Color1: {{design.color1}}<br/>Color2: {{design.color2}}<br/>Font1: {{design.font1}}<br/>Font2: {{design.font2}}<br/>BG: {{design.bg}}</p>
 	        </div>
 	    </div>    
-	</div>
-	<div class="container">
 	    <div class="row">
-	        <form novalidate>
-			    Primary Color:<br>
-			    <input type="text" ng-model="design.color1" name="color1"><br>
-			    Secondary Color:<br>
-			    <input type="text" ng-model="design.color2" name="color2"><br>
-			    Heading Font:<br>
-			    <input type="text" ng-model="design.font1" name="font1"><br>
-			    Paragraph Font:<br>
-			    <input type="text" ng-model="design.font2" name="font2"><br>
-			    Background:<br>
-			    <input type="text" ng-model="design.bg" name="bg"><br>
-			    <br><br>
-			    <button ng-click="reset()">RESET</button>
-			    <button type="submit">DEPLOY</button>
+	    	<form novalidate>
+	    		<div class="col-lg-2 text-center">
+				    <h3>Primary Color:</h3>
+				    <input type="text" ng-model="design.color1" name="color1">
+				</div>
+				<div class="col-lg-2 text-center">
+				    <h3>Secondary Color:</h3>
+				    <input type="text" ng-model="design.color2" name="color2">
+				</div>
+				<div class="col-lg-2 text-center">
+				    <h3>Heading Font:</h3>
+				    <input type="text" ng-model="design.font1" name="font1">
+				</div>
+			    	<h3>Paragraph Font:</h3>
+			    	<input type="text" ng-model="design.font2" name="font2">
+			    </div>
+			    <div class="col-lg-2 text-center">
+				    Background:<br>
+				    <input type="text" ng-model="design.bg" name="bg">
+				</div>
+				<div class="col-lg-2 text-center">
+				    <button ng-click="reset()">RESET</button>
+				    <button type="submit">DEPLOY</button>
+				</div>
 			</form>
 	    </div>
 	</div>
