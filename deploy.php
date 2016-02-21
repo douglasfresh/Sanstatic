@@ -1,3 +1,4 @@
+<!--
 <?php
 
 /* testing the forms
@@ -50,6 +51,7 @@ echo  htmlspecialchars($response);
 */ 
 
 ?>
+-->
 
 <!DOCTYPE html>
 <html lang="en" ng-app="app" ng-controller="ContentfulCtrl">
@@ -70,7 +72,7 @@ echo  htmlspecialchars($response);
 <div ng-app="myApp" ng-controller="formCtrl">
   <form novalidate>
     Primary Color:<br>
-    <input type="text" ng-model="design.color1"><br>
+    <input type="text" ng-model="design.color1"> <a href="https://www.google.com/design/spec/style/color.html">Google Color Guide</a><br>
     Heading Font:<br>
     <input type="text" ng-model="design.font1"><br>
     Paragraph Font:<br>
