@@ -132,7 +132,6 @@ $less->compileFile($input, $output);
 					</div>
 					<br/>
 					<div class="row">
-						<button ng-click="clear()">CLEAR</button>
 					    <button ng-click="reset()">RESET</button>
 					    <button type="submit">DEPLOY</button>
 					</div>
@@ -164,11 +163,6 @@ app.controller('formCtrl', ['$scope', '$q', '$http', function($scope, $q, $http)
      resolveLinks: true,
 
    });
-
-   $scope.clear = function() {
-   	   $scope.brand = {};
-   	   $scope.design = [];
-   };
 
    $scope.reset = function() {
    	   var entries = $q.when(client.entries({content_type: 'brand'}));
