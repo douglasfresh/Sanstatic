@@ -116,7 +116,7 @@ app.controller('formCtrl', function($scope) {
 
    entries.then(function(entries) {
       $scope.contentful = entries[0].fields;
-   }
+   });
 });
 
 </script>
