@@ -28,7 +28,7 @@ else {
 }
 
 if(isset($_GET["color1"])) {
-	$color1 = "#" . $_GET["color1"];
+	$color1 = $_GET["color1"];
 }
 else {
 	$color1 = '#76ff03';
