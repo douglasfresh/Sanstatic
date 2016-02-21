@@ -51,8 +51,24 @@ echo  htmlspecialchars($response);
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ContentfulCtrl">
+
+<head>
+	<title>Design elements configuration</title>
+	<!-- Angular -->
+	<script src="https://storage.googleapis.com/cdnsanstatic/js/angular.min.js"></script>
+    <script src="https://storage.googleapis.com/cdnsanstatic/js/contentful.min.js"></script>
+    <script src="http://sanstatic.com/site/js/angular-route.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="http://sanstatic.com/site/css/creative.css" type="text/css">
+
 <div ng-controller="ExampleController">
   <form novalidate class="simple-form">
+  	<h1>Design elements configuration</h1>
     Name: <input type="text" ng-model="user.name" /><br />
     E-mail: <input type="email" ng-model="user.email" /><br />
     Gender: <input type="radio" ng-model="user.gender" value="male" />male
@@ -60,7 +76,7 @@ echo  htmlspecialchars($response);
     <input type="button" ng-click="reset()" value="Reset" />
     <input type="submit" ng-click="update(user)" value="Save" />
   </form>
-  <pre>user = {{user | json}}</pre>
+  <pre>user = {{user.name}}, {{user.email}}, and {{user.gender}}</pre>
   <pre>master = {{master | json}}</pre>
 </div>
 
