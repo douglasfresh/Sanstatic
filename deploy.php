@@ -73,8 +73,6 @@ $less->compileFile($input, $output);
 
 <!-- CSS -->
 <link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="https://storage.googleapis.com/cdnsanstatic/css/animate.min.css" type="text/css">
-<link rel="stylesheet" href="http://sanstatic.com/site/css/creative.css" type="text/css">
 
 <!-- Inline CSS -->
 <style>
