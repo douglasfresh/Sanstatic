@@ -2,7 +2,7 @@
 <html lang="en" ng-app="app" ng-controller="ContentfulCtrl as vm">
 
 <head>
-    <title>Sanstatic : {{vm.brand.tagline}}</title>
+    <title>{{vm.brand.name}} : {{vm.brand.tagline}}</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -60,7 +60,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
- {{vm.url}} {{vm.template}}</a>
+                <a class="navbar-brand page-scroll" href="#page-top">{{vm.brand.name}}</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -80,7 +80,7 @@
             <div class="header-content-inner">
                 <h1>{{vm.header.heading}}</h1>
                 <hr>
-                <p>{{vm.header.subheading}} <span ng-show="vm.header.description"><br/>{{vm.header.description}}</p></p>
+                <p>{{vm.header.subheading}} <span ng-show="vm.header.description"><br/>{{vm.header.description}}</p>
                 <a href="https://doug49.typeform.com/to/accPCL" data-mode="1" class="btn btn-primary btn-xl page-scroll">{{vm.header.buttonText}}</a>
             </div>
         </div>
