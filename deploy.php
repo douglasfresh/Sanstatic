@@ -82,6 +82,10 @@ if($compile) {
 		    	<h3>Settings</h3>
 			    <form novalidate action="deploy.php" method="get">
 			    	<div class="row">
+					    <label>Contentful Space</label>
+					    <input type="text" ng-model="design.space" name="space"><br/>
+					</div>
+			    	<div class="row">
 					    <label>Primary Color</label>
 					    <input type="text" ng-model="design.color1" name="color1"><br/>
 					</div>
@@ -176,6 +180,7 @@ if($compile) {
 		      $scope.design["font1"] = entries[0].fields.primaryFont;
 		      $scope.design["font2"] = entries[0].fields.secondaryFont;
 		      $scope.design["bg"] = entries[0].fields.picture;
+		      $scope.design["space"] = entries[0].fields.space;
 		   });
 	   };
 
